@@ -8,14 +8,14 @@ using Android.Util;
 using Android.Text;
 
 #if ! AZURE_MOBILE_SERVICES
-namespace Android.Support.CustomTabs.Chromium.SharedUtilities
+namespace AndroidX.Browser.CustomTabs.Chromium.SharedUtilities
 #else
-namespace Android.Support.CustomTabs.Chromium.SharedUtilities._MobileServices
+namespace AndroidX.Browser.CustomTabs.Chromium.SharedUtilities._MobileServices
 #endif
 {
-    #if XAMARIN_CUSTOM_TABS_INTERNAL
+#if XAMARIN_CUSTOM_TABS_INTERNAL
     internal class PackageManagerHelper
-    #else
+#else
     public class PackageManagerHelper
 	#endif
     {
@@ -41,12 +41,12 @@ namespace Android.Support.CustomTabs.Chromium.SharedUtilities._MobileServices
         public static string CustomTabsExtraKeepAlive
         {
             get;
-        } = "android.support.customtabs.extra.KEEP_ALIVE";
+        } = "android.support.customtabs.extra.KEEP_ALIVE"; // doesn't exist in AndroidX
 
         public static string CustomTabsActionCustomTabsService
         {
             get;
-        } = "android.support.customtabs.action.CustomTabsService";
+        } = AndroidX.Browser.CustomTabs.CustomTabsService.ActionCustomTabsConnection;
 
         public PackageManagerHelper()
         {
@@ -142,7 +142,7 @@ namespace Android.Support.CustomTabs.Chromium.SharedUtilities._MobileServices
 
 
                 Intent serviceIntent = new Intent();
-                // Android.Support.CustomTabs.action.CustomTabsService
+                // AndroidX.Browser.CustomTabs.action.CustomTabsService
                 serviceIntent.SetAction(PackageManagerHelper.CustomTabsActionCustomTabsService);
                 serviceIntent.SetPackage(info.ActivityInfo.PackageName);
                 if (pm.ResolveService(serviceIntent, PackageInfoFlags.MatchAll) != null)

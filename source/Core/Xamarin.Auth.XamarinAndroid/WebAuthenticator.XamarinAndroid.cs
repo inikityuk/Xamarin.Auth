@@ -68,7 +68,7 @@ namespace Xamarin.Auth._MobileServices
         /// </summary>
         /// <returns>
         /// The platform Native UI (embeded/integrated Browser Control/Widget/View (WebView)).
-        /// Android.Support.CustomTabs.CustomTabsIntent
+        /// AndroidX.Browser.CustomTabs.CustomTabsIntent
         /// </returns>
         /// <see cref="https://components.xamarin.com/gettingstarted/xamandroidsupportcustomtabs"/>
         protected AuthenticateUIType GetPlatformUIEmbeddedBrowser(UIContext context)

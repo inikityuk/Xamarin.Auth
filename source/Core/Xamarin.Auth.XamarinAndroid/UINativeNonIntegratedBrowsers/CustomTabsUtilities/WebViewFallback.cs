@@ -15,20 +15,20 @@
 using Android.App;
 using Android.Content;
 using Android.Net;
-using Android.Support.CustomTabs.Chromium.SharedUtilities;
+using AndroidX.Browser.CustomTabs.Chromium.SharedUtilities;
 
 #if ! AZURE_MOBILE_SERVICES
-namespace Android.Support.CustomTabs.Chromium.SharedUtilities
+namespace AndroidX.Browser.CustomTabs.Chromium.SharedUtilities
 #else
-namespace Android.Support.CustomTabs.Chromium.SharedUtilities._MobileServices
+namespace AndroidX.Browser.CustomTabs.Chromium.SharedUtilities._MobileServices
 #endif
 {
     /// <summary>
     /// A Fallback that opens a Webview when Custom Tabs is not available
     /// </summary>
-    #if XAMARIN_CUSTOM_TABS_INTERNAL
+#if XAMARIN_CUSTOM_TABS_INTERNAL
     internal partial class WebViewFallback : ICustomTabFallback
-    #else
+#else
     public partial class WebViewFallback : ICustomTabFallback
     #endif
     {

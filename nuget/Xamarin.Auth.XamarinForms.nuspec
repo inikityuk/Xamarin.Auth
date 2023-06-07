@@ -84,10 +84,10 @@
 			-->
 			<group>
 				<dependency id="Xamarin.Auth" version="[1.7.0.0,)"/>
-				<dependency id="Xamarin.Forms" version="[2.3,)"/>
+				<dependency id="Xamarin.Forms" version="[4.0.0.425677]"/>
 			</group>
 			<group targetFramework="MonoAndroid10">
-				<dependency id="Xamarin.Android.Support.CustomTabs" version="[23.3.0,)" />
+				<dependency id="Xamarin.Android.Support.CustomTabs" version="[28.0.0.1]" />
 			</group>
 		</dependencies>
 	</metadata>
@@ -248,7 +248,7 @@
 			│   ├── Xamarin.Auth.XamarinForms.pdb
 			│   └── Xamarin.Auth.XamarinForms.pri
 		-->
-		<file
+		<!-- <file
 			src="..\source\XamarinForms\Xamarin.Auth.Forms.UniversalWindowsPlatform\bin\Release\Xamarin.Auth.XamarinForms.dll"
 			target="lib/uap10.0/Xamarin.Auth.XamarinForms.dll"
 			>
@@ -262,7 +262,7 @@
 			src="..\source\XamarinForms\Xamarin.Auth.Forms.UniversalWindowsPlatform\bin\Release\Xamarin.Auth.XamarinForms.pri"
 			target="lib/uap10.0/Xamarin.Auth.XamarinForms.pri"
 			>
-		</file>
+		</file> -->
 		<!--
 		<file
 			src="..\source\XamarinForms\Xamarin.Auth.Forms.UniversalWindowsPlatform\bin\Release\WebAuthenticatorPage.xaml"

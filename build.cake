@@ -70,12 +70,12 @@ MSBuild
 
 #########################################################################################
 */
-#tool nuget:?package=vswhere
+#tool nuget:?package=vswhere&version=2.2.11
 
-#addin nuget:?package=Cake.Xamarin //&version=2.0.1
+#addin nuget:?package=Cake.Xamarin&version=4.0.0
 //#addin nuget:?package=Cake.Xamarin.Build //&version=3.0.6
-#addin nuget:?package=Cake.FileHelpers //&2.0.0
-#addin nuget::?package=Cake.Incubator //&version=1.6.0
+#addin nuget:?package=Cake.FileHelpers&version=2.0.0
+#addin nuget::?package=Cake.Incubator&version=4.0.2
 #addin nuget:?package=Xamarin.Nuget.Validator&version=1.1.1
 
 /*
@@ -340,7 +340,7 @@ Task ("package")
     ;
 
 Task ("libs")
-    .IsDependentOn ("libs-windows")
+    //.IsDependentOn ("libs-windows")
     .IsDependentOn ("libs-macosx")
     .Does
     (
@@ -1553,58 +1553,58 @@ Task ("copy-artifacts")
                     "./output/ios/"
                 );
             //-------------------------------------------------------------------------------------
-            CopyFiles
-                (
-                    "./source/Core/Xamarin.Auth.WindowsPhone8/**/Release/Xamarin.Auth.dll",
-                    "./output/wp80/"
-                );
-            CopyFiles
-                (
-                    "./source/Core/Xamarin.Auth.WindowsPhone8/**/Release/Xamarin.Auth.pdb",
-                    "./output/wp80/"
-                );
+            // CopyFiles
+            //     (
+            //         "./source/Core/Xamarin.Auth.WindowsPhone8/**/Release/Xamarin.Auth.dll",
+            //         "./output/wp80/"
+            //     );
+            // CopyFiles
+            //     (
+            //         "./source/Core/Xamarin.Auth.WindowsPhone8/**/Release/Xamarin.Auth.pdb",
+            //         "./output/wp80/"
+            //     );
             //-------------------------------------------------------------------------------------
-            CopyFiles
-                (
-                    "./source/Core/Xamarin.Auth.WindowsPhone81/**/Release/Xamarin.Auth.dll",
-                    "./output/wp81/"
-                );
-            CopyFiles
-                (
-                    "./source/Core/Xamarin.Auth.WindowsPhone81/**/Release/Xamarin.Auth.pdb",
-                    "./output/wp81/"
-                );
+            // CopyFiles
+            //     (
+            //         "./source/Core/Xamarin.Auth.WindowsPhone81/**/Release/Xamarin.Auth.dll",
+            //         "./output/wp81/"
+            //     );
+            // CopyFiles
+            //     (
+            //         "./source/Core/Xamarin.Auth.WindowsPhone81/**/Release/Xamarin.Auth.pdb",
+            //         "./output/wp81/"
+            //     );
             //-------------------------------------------------------------------------------------
-            CopyFiles
-                (
-                    "./source/Core/Xamarin.Auth.WinRTWindows81/**/Release/Xamarin.Auth.dll",
-                    "./output/win81/"
-                );
-            CopyFiles
-                (
-                    "./source/Core/Xamarin.Auth.WinRTWindows81/**/Release/Xamarin.Auth.pdb",
-                    "./output/win81/"
-                );
-            CopyFiles
-                (
-                    "./source/Core/Xamarin.Auth.WinRTWindows81/**/Release/Xamarin.Auth.pri",
-                    "./output/win81/"
-                );
-            CopyFiles
-                (
-                    "./source/Core/Xamarin.Auth.WinRTWindows81/**/Release/Xamarin.Auth.xr.xml",
-                    "./output/win81/Xamarin.Auth/"
-                );
-            CopyFiles
-                (
-                    "./source/Core/Xamarin.Auth.WinRTWindows81/**/Release/WebAuthenticatorPage.xaml",
-                    "./output/win81/Xamarin.Auth/"
-                );
-            CopyFiles
-                (
-                    "./source/Core/Xamarin.Auth.WinRTWindows81/**/Release/WebAuthenticatorPage.xbf",
-                    "./output/win81/Xamarin.Auth/"
-                );
+            // CopyFiles
+            //     (
+            //         "./source/Core/Xamarin.Auth.WinRTWindows81/**/Release/Xamarin.Auth.dll",
+            //         "./output/win81/"
+            //     );
+            // CopyFiles
+            //     (
+            //         "./source/Core/Xamarin.Auth.WinRTWindows81/**/Release/Xamarin.Auth.pdb",
+            //         "./output/win81/"
+            //     );
+            // CopyFiles
+            //     (
+            //         "./source/Core/Xamarin.Auth.WinRTWindows81/**/Release/Xamarin.Auth.pri",
+            //         "./output/win81/"
+            //     );
+            // CopyFiles
+            //     (
+            //         "./source/Core/Xamarin.Auth.WinRTWindows81/**/Release/Xamarin.Auth.xr.xml",
+            //         "./output/win81/Xamarin.Auth/"
+            //     );
+            // CopyFiles
+            //     (
+            //         "./source/Core/Xamarin.Auth.WinRTWindows81/**/Release/WebAuthenticatorPage.xaml",
+            //         "./output/win81/Xamarin.Auth/"
+            //     );
+            // CopyFiles
+            //     (
+            //         "./source/Core/Xamarin.Auth.WinRTWindows81/**/Release/WebAuthenticatorPage.xbf",
+            //         "./output/win81/Xamarin.Auth/"
+            //     );
             //-------------------------------------------------------------------------------------
             /*
                 Dependencies omitted!!
@@ -1618,66 +1618,66 @@ Task ("copy-artifacts")
                 │   ├── Xamarin.Auth.pdb
                 │   └── Xamarin.Auth.pri
             */
-            CopyFiles
-                (
-                    "./source/Core/Xamarin.Auth.WinRTWindowsPhone81/**/Release/Xamarin.Auth.dll",
-                    "./output/wpa81/"
-                );
-            CopyFiles
-                (
-                    "./source/Core/Xamarin.Auth.WinRTWindowsPhone81/**/Release/Xamarin.Auth.pdb",
-                    "./output/wpa81/"
-                );
-            CopyFiles
-                (
-                    "./source/Core/Xamarin.Auth.WinRTWindowsPhone81/**/Release/Xamarin.Auth.pri",
-                    "./output/wpa81/"
-                );
-            CopyFiles
-                (
-                    "./source/Core/Xamarin.Auth.WinRTWindowsPhone81/**/Release/Xamarin.Auth.xr.xml",
-                    "./output/wpa81/Xamarin.Auth/"
-                );
-            CopyFiles
-                (
-                    "./source/Core/Xamarin.Auth.WinRTWindowsPhone81/**/Release/WebAuthenticatorPage.xaml",
-                    "./output/wpa81/Xamarin.Auth/"
-                );
-            CopyFiles
-                (
-                    "./source/Core/Xamarin.Auth.WinRTWindowsPhone81/**/Release/WebAuthenticatorPage.xbf",
-                    "./output/wpa81/Xamarin.Auth/"
-                );
+            // CopyFiles
+            //     (
+            //         "./source/Core/Xamarin.Auth.WinRTWindowsPhone81/**/Release/Xamarin.Auth.dll",
+            //         "./output/wpa81/"
+            //     );
+            // CopyFiles
+            //     (
+            //         "./source/Core/Xamarin.Auth.WinRTWindowsPhone81/**/Release/Xamarin.Auth.pdb",
+            //         "./output/wpa81/"
+            //     );
+            // CopyFiles
+            //     (
+            //         "./source/Core/Xamarin.Auth.WinRTWindowsPhone81/**/Release/Xamarin.Auth.pri",
+            //         "./output/wpa81/"
+            //     );
+            // CopyFiles
+            //     (
+            //         "./source/Core/Xamarin.Auth.WinRTWindowsPhone81/**/Release/Xamarin.Auth.xr.xml",
+            //         "./output/wpa81/Xamarin.Auth/"
+            //     );
+            // CopyFiles
+            //     (
+            //         "./source/Core/Xamarin.Auth.WinRTWindowsPhone81/**/Release/WebAuthenticatorPage.xaml",
+            //         "./output/wpa81/Xamarin.Auth/"
+            //     );
+            // CopyFiles
+            //     (
+            //         "./source/Core/Xamarin.Auth.WinRTWindowsPhone81/**/Release/WebAuthenticatorPage.xbf",
+            //         "./output/wpa81/Xamarin.Auth/"
+            //     );
             //-------------------------------------------------------------------------------------
-            CopyFiles
-                (
-                    "./source/Core/Xamarin.Auth.UniversalWindowsPlatform/bin/Release/Xamarin.Auth.dll",
-                    "./output/uap10.0/"
-                );
-            CopyFiles
-                (
-                    "./source/Core/Xamarin.Auth.UniversalWindowsPlatform/bin/Release/Xamarin.Auth.pdb",
-                    "./output/uap10.0/"
-                );
-            CopyFiles
-                (
-                    "./source/Core/Xamarin.Auth.UniversalWindowsPlatform/bin/Release/Xamarin.Auth.pri",
-                    "./output/uap10.0/"
-                );
-            CopyFiles
-                (
-                    /*
-                    mc++ 2017-10-17 output changed??
-                    Visual Studio does not generate Xamarin.Auth subfolder, but nuget needs it
-                    */
-                    "./source/Core/Xamarin.Auth.UniversalWindowsPlatform/bin/Release/Xamarin.Auth.xr.xml",
-                    "./output/uap10.0/Xamarin.Auth/"
-                );
-            CopyFiles
-                (
-                    "./source/Core/Xamarin.Auth.UniversalWindowsPlatform/bin/Release/WebAuthenticatorPage.xbf",
-                    "./output/uap10.0/Xamarin.Auth/"
-                );
+            // CopyFiles
+            //     (
+            //         "./source/Core/Xamarin.Auth.UniversalWindowsPlatform/bin/Release/Xamarin.Auth.dll",
+            //         "./output/uap10.0/"
+            //     );
+            // CopyFiles
+            //     (
+            //         "./source/Core/Xamarin.Auth.UniversalWindowsPlatform/bin/Release/Xamarin.Auth.pdb",
+            //         "./output/uap10.0/"
+            //     );
+            // CopyFiles
+            //     (
+            //         "./source/Core/Xamarin.Auth.UniversalWindowsPlatform/bin/Release/Xamarin.Auth.pri",
+            //         "./output/uap10.0/"
+            //     );
+            // CopyFiles
+            //     (
+            //         /*
+            //         mc++ 2017-10-17 output changed??
+            //         Visual Studio does not generate Xamarin.Auth subfolder, but nuget needs it
+            //         */
+            //         "./source/Core/Xamarin.Auth.UniversalWindowsPlatform/bin/Release/Xamarin.Auth.xr.xml",
+            //         "./output/uap10.0/Xamarin.Auth/"
+            //     );
+            // CopyFiles
+            //     (
+            //         "./source/Core/Xamarin.Auth.UniversalWindowsPlatform/bin/Release/WebAuthenticatorPage.xbf",
+            //         "./output/uap10.0/Xamarin.Auth/"
+            //     );
             /*
                 .net Native - Linking stuff - not needed
             CopyFiles
@@ -1931,54 +1931,54 @@ Task ("nuget")
     (
         () =>
         {
-            string platform = null;
-            string msg =
-                "Missing Windows dll artifacts"
-                + System.Environment.NewLine +
-                "Please, build on Windows first!"
-                + System.Environment.NewLine
-                ;
+            // string platform = null;
+            // string msg =
+            //     "Missing Windows dll artifacts"
+            //     + System.Environment.NewLine +
+            //     "Please, build on Windows first!"
+            //     + System.Environment.NewLine
+            //     ;
 
-            platform = "win81";
-            if
-            (
-                ! FileExists($"./output/{platform}/Xamarin.Auth.dll")
-            )
-            {
-                throw new System.ArgumentNullException(msg + $"platform = {platform}");
-            }
-            platform = "wp80";
-            if
-            (
-                ! FileExists($"./output/{platform}/Xamarin.Auth.dll")
-            )
-            {
-                throw new System.ArgumentNullException(msg + $"platform = {platform}");
-            }
-            platform = "wp81";
-            if
-            (
-                ! FileExists($"./output/{platform}/Xamarin.Auth.dll")
-            )
-            {
-                throw new System.ArgumentNullException(msg + $"platform = {platform}");
-            }
-            platform = "wpa81";
-            if
-            (
-                ! FileExists($"./output/{platform}/Xamarin.Auth.dll")
-            )
-            {
-                throw new System.ArgumentNullException(msg + $"platform = {platform}");
-            }
-            platform = "uap10.0";
-            if
-            (
-                ! FileExists($"./output/{platform}/Xamarin.Auth.dll")
-            )
-            {
-                throw new System.ArgumentNullException(msg + $"platform = {platform}");
-            }
+            // platform = "win81";
+            // if
+            // (
+            //     ! FileExists($"./output/{platform}/Xamarin.Auth.dll")
+            // )
+            // {
+            //     throw new System.ArgumentNullException(msg + $"platform = {platform}");
+            // }
+            // platform = "wp80";
+            // if
+            // (
+            //     ! FileExists($"./output/{platform}/Xamarin.Auth.dll")
+            // )
+            // {
+            //     throw new System.ArgumentNullException(msg + $"platform = {platform}");
+            // }
+            // platform = "wp81";
+            // if
+            // (
+            //     ! FileExists($"./output/{platform}/Xamarin.Auth.dll")
+            // )
+            // {
+            //     throw new System.ArgumentNullException(msg + $"platform = {platform}");
+            // }
+            // platform = "wpa81";
+            // if
+            // (
+            //     ! FileExists($"./output/{platform}/Xamarin.Auth.dll")
+            // )
+            // {
+            //     throw new System.ArgumentNullException(msg + $"platform = {platform}");
+            // }
+            // platform = "uap10.0";
+            // if
+            // (
+            //     ! FileExists($"./output/{platform}/Xamarin.Auth.dll")
+            // )
+            // {
+            //     throw new System.ArgumentNullException(msg + $"platform = {platform}");
+            // }
 
             NuGetPack
                 (

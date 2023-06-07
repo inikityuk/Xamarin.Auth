@@ -19,22 +19,21 @@ using Android.App;
 using Android.Net;
 using Android.OS;
 using Android.Widget;
-using Android.Support.CustomTabs;
 using Xamarin.Auth;
 
 #if !AZURE_MOBILE_SERVICES
-namespace Android.Support.CustomTabs.Chromium.SharedUtilities
+namespace AndroidX.Browser.CustomTabs.Chromium.SharedUtilities
 #else
-namespace Android.Support.CustomTabs.Chromium.SharedUtilities._MobileServices
+namespace AndroidX.Browser.CustomTabs.Chromium.SharedUtilities._MobileServices
 #endif
 {
     /// <summary>
     /// This is a helper class to manage the connection from Activity to the CustomTabs 
     /// Service.
     /// </summary>
-    #if XAMARIN_CUSTOM_TABS_INTERNAL
+#if XAMARIN_CUSTOM_TABS_INTERNAL
     internal partial class CustomTabActivityHelper : Java.Lang.Object, IServiceConnectionCallback
-    #else
+#else
     public partial class CustomTabActivityHelper : Java.Lang.Object, IServiceConnectionCallback
     #endif
     {
@@ -144,7 +143,7 @@ namespace Android.Support.CustomTabs.Chromium.SharedUtilities._MobileServices
 
         protected void custom_tabs_activit_manager_CustomTabsServiceConnected 
                                     (
-                                        Content.ComponentName name, 
+                                        Android.Content.ComponentName name, 
                                         CustomTabsClient client
                                     )
         {

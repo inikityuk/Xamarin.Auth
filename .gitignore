@@ -315,6 +315,7 @@ App_Data/*.ldf
 # Cake Build system
 tools/
 **/tools/
+!tools/packages.config
 #----------------------------------------------
 
 #----------------------------------------------

@@ -2,7 +2,7 @@ using System;
 
 using AuthenticateUIType =
             Android.Content.Intent
-            //global::Android.Support.CustomTabs.CustomTabsIntent.Builder // not an Intent
+            //global::AndroidX.Browser.CustomTabs.CustomTabsIntent.Builder // not an Intent
             //System.Object
             ;
 using UIContext =
@@ -37,7 +37,7 @@ namespace Xamarin.Auth._MobileServices
         /// </summary>
         /// <returns>
         /// The platform Native UI (non-embeded/non-integrated Browser Control/Widget/View (WebView).
-        /// Android.Support.CustomTabs.CustomTabsIntent
+        /// AndroidX.Browser.CustomTabs.CustomTabsIntent
         /// </returns>
         /// <see cref="https://components.xamarin.com/gettingstarted/xamandroidsupportcustomtabs"/>
         protected virtual AuthenticateUIType GetPlatformUINative(UIContext context)
