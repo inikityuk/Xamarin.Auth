@@ -1,15 +1,12 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectTypeGuids>{FEACFBD2-3405-455C-9665-78FE426C6842};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
-    <ProjectGuid>{15BE2387-8E72-4C0B-8A6A-460EF5FA4539}</ProjectGuid>
-    <OutputType>Library</OutputType>
-    <RootNamespace>Xamarin.Auth</RootNamespace>
-    <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
-    <AssemblyName>Xamarin.Auth</AssemblyName>
+    <TargetFrameworks>net7.0-ios</TargetFrameworks>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>true</ImplicitUsings>
+    <SupportedOSPlatformVersion>13.0</SupportedOSPlatformVersion>
+    <Version>99.9.9</Version>
   </PropertyGroup>
+
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
     <DebugType>pdbonly</DebugType>
@@ -20,6 +17,7 @@
     <WarningLevel>4</WarningLevel>
     <ConsolePause>false</ConsolePause>
     <XamarinAuthCustomPreprocessorConstantsDefines></XamarinAuthCustomPreprocessorConstantsDefines>
+    <CreatePackage>false</CreatePackage>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -30,8 +28,9 @@
     <WarningLevel>4</WarningLevel>
     <ConsolePause>false</ConsolePause>
     <DebugSymbols>true</DebugSymbols>
+    <CreatePackage>false</CreatePackage>
   </PropertyGroup>
-  <ItemGroup>
+<!--  <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Json" />
     <Reference Include="System.Xml" />
@@ -62,20 +61,25 @@
     <Reference Include="Validation">
       <HintPath>..\..\packages\Validation.2.4.18\lib\netstandard1.3\Validation.dll</HintPath>
     </Reference>
-  </ItemGroup>
+  </ItemGroup>-->
   <ItemGroup>
-    <Compile Include="..\Xamarin.Auth.Common.LinkSource\AssemblyInfo.cs">
-      <Link>AssemblyInfo.cs</Link>
-    </Compile>
-    <Compile Include="..\Xamarin.Auth.Common.LinkSource\Authenticator.cs">
-      <Link>Authenticator.cs</Link>
-    </Compile>
-    <Compile Include="..\Xamarin.Auth.Common.LinkSource\AuthenticatorCompletedEventArgs.cs">
+      <Compile Include="..\Xamarin.Auth.Common.LinkSource\AuthenticatorCompletedEventArgs.cs">
       <Link>AuthenticatorCompletedEventArgs.cs</Link>
     </Compile>
     <Compile Include="..\Xamarin.Auth.Common.LinkSource\AuthenticatorErrorEventArgs.cs">
       <Link>AuthenticatorErrorEventArgs.cs</Link>
     </Compile>
+    <Compile Include="..\Xamarin.Auth.Common.LinkSource\FormAuthenticator.cs">
+      <Link>FormAuthenticator.cs</Link>
+    </Compile>
+    <Compile Include="..\Xamarin.Auth.Common.LinkSource\WebAuthenticator.cs">
+      <Link>WebAuthenticator.cs</Link>
+    </Compile>
+    <Compile Include="..\Xamarin.Auth.Common.LinkSource\Authenticator.cs">
+      <Link>Authenticator.cs</Link>
+    </Compile>
+    
+    
     <Compile Include="..\Xamarin.Auth.Common.LinkSource\AuthException.cs">
       <Link>AuthException.cs</Link>
     </Compile>
@@ -84,9 +88,6 @@
     </Compile>
     <Compile Include="..\Xamarin.Auth.Common.LinkSource\ExceptionEx.cs">
       <Link>ExceptionEx.cs</Link>
-    </Compile>
-    <Compile Include="..\Xamarin.Auth.Common.LinkSource\FormAuthenticator.cs">
-      <Link>FormAuthenticator.cs</Link>
     </Compile>
     <Compile Include="..\Xamarin.Auth.Common.LinkSource\OAuth1.cs">
       <Link>OAuth1.cs</Link>
@@ -112,9 +113,7 @@
     <Compile Include="..\Xamarin.Auth.Common.LinkSource\v.2\HttpWebClientFrameworkType.cs">
       <Link>v.2\HttpWebClientFrameworkType.cs</Link>
     </Compile>
-    <Compile Include="..\Xamarin.Auth.Common.LinkSource\WebAuthenticator.cs">
-      <Link>WebAuthenticator.cs</Link>
-    </Compile>
+    
     <Compile Include="..\Xamarin.Auth.Common.LinkSource\WebEx.cs">
       <Link>WebEx.cs</Link>
     </Compile>
@@ -124,38 +123,39 @@
     <Compile Include="..\Xamarin.Auth.Common.LinkSource\WebUtilities.cs">
       <Link>WebUtilities.cs</Link>
     </Compile>
-    <Compile Include="Authenticator.XamarinIOS.cs" />
-    <Compile Include="Presenters\AuthenticationConfiguration.XamarinIOS.cs" />
-    <Compile Include="FormAuthenticator.XamarinIOS.cs" />
-    <Compile Include="PlatformSpecific\FileHelper.cs" />
-    <Compile Include="PlatformSpecific\FormAuthenticatorController.cs" />
-    <Compile Include="PlatformSpecific\ProgressLabel.cs" />
-    <Compile Include="PlatformSpecific\UIViewControllerEx.cs" />
-    <Compile Include="PlatformSpecific\WebAuthenticatorController.cs" />
-    <Compile Include="WebAuthenticator.XamarinIOS.cs" />
-    <Compile Include="..\Xamarin.Auth.Common.LinkSource\Plugins\UIThreadRunInvoker.cs">
+    <!--<Compile Include="Authenticator.XamarinIOS.cs" />-->
+    <!--<Compile Include="Presenters\AuthenticationConfiguration.XamarinIOS.cs" />-->
+    <!--<Compile Include="FormAuthenticator.XamarinIOS.cs" />-->
+    <!--<Compile Include="PlatformSpecific\FileHelper.cs" />-->
+    <!--<Compile Include="PlatformSpecific\FormAuthenticatorController.cs" />-->
+    <!--<Compile Include="PlatformSpecific\ProgressLabel.cs" />-->
+    <!--<Compile Include="PlatformSpecific\UIViewControllerEx.cs" />-->
+    <!--<Compile Include="PlatformSpecific\WebAuthenticatorController.cs" />-->
+    <!--<Compile Include="WebAuthenticator.XamarinIOS.cs" />-->
+    <Compile Include="..\Xamarin.Auth.Common.LinkSource\UINativeNonIntegratedBrowsers\WebAuthenticator.NativeUI.cs">
+      <Link>UINativeNonIntegratedBrowsers\WebAuthenticator.NativeUI.cs</Link>
+    </Compile>
+<!--    <Compile Include="..\Xamarin.Auth.Common.LinkSource\Plugins\UIThreadRunInvoker.cs">
       <Link>Plugins\UIThreadRunInvoker.cs</Link>
     </Compile>
     <Compile Include="..\Xamarin.Auth.Common.LinkSource\Plugins\IRunInvoker.cs">
       <Link>Plugins\IRunInvoker.cs</Link>
     </Compile>
-    <Compile Include="..\Xamarin.Auth.Common.LinkSource\UINativeNonIntegratedBrowsers\WebAuthenticator.NativeUI.cs">
-      <Link>UINativeNonIntegratedBrowsers\WebAuthenticator.NativeUI.cs</Link>
-    </Compile>
+    
     <Compile Include="UINativeNonIntegratedBrowsers\WebAuthenticator.NativeUI.XamarinIOS.cs" />
     <Compile Include="..\Xamarin.Auth.Common.LinkSource\UINativeNonIntegratedBrowsers\AuthenticationUI.cs">
       <Link>UINativeNonIntegratedBrowsers\AuthenticationUI.cs</Link>
     </Compile>
     <Compile Include="..\Xamarin.Auth.Common.LinkSource\UINativeNonIntegratedBrowsers\AuthenticationUIType.cs">
       <Link>UINativeNonIntegratedBrowsers\AuthenticationUIType.cs</Link>
-    </Compile>
-    <Compile Include="Plugins\UIThreadRunInvoker.XamarinIOS.cs" />
-    <Compile Include="PlatformSpecific\WebAuthenticatorController.UIWebView.UIWebViewDelegate.cs" />
-    <Compile Include="PlatformSpecific\WebAuthenticatorController.WKWebView.WKWebViewNavigationDelegate.cs" />
-    <Compile Include="PlatformSpecific\WebViewConfiguration.cs" />
-    <Compile Include="UINativeNonIntegratedBrowsers\NativeAuthSafariViewControllerDelegate.cs" />
-    <Compile Include="Presenters\OAuthPlatformPresenter.XamarinIOS.cs" />
-    <Compile Include="UINativeNonIntegratedBrowsers\SafariViewControllerConfiguration.cs" />
+    </Compile>-->
+    <!--<Compile Include="Plugins\UIThreadRunInvoker.XamarinIOS.cs" />-->
+    <!--<Compile Include="PlatformSpecific\WebAuthenticatorController.UIWebView.UIWebViewDelegate.cs" />-->
+    <!--<Compile Include="PlatformSpecific\WebAuthenticatorController.WKWebView.WKWebViewNavigationDelegate.cs" />-->
+    <!--<Compile Include="PlatformSpecific\WebViewConfiguration.cs" />-->
+    <!--<Compile Include="UINativeNonIntegratedBrowsers\NativeAuthSafariViewControllerDelegate.cs" />-->
+    <!--<Compile Include="Presenters\OAuthPlatformPresenter.XamarinIOS.cs" />-->
+    <!--<Compile Include="UINativeNonIntegratedBrowsers\SafariViewControllerConfiguration.cs" />-->
     <Compile Include="..\Xamarin.Auth.Common.LinkSource\AccountStore\Account.cs">
       <Link>AccountStore\Account.cs</Link>
     </Compile>
@@ -168,17 +168,17 @@
     <Compile Include="..\Xamarin.Auth.Common.LinkSource\AccountStore\AccountStore.Async.cs">
       <Link>AccountStore\AccountStore.Async.cs</Link>
     </Compile>
-    <Compile Include="AccountStore\AccountStore.XamarinIOS.cs" />
+    <!--<Compile Include="AccountStore\AccountStore.XamarinIOS.cs" />-->
     <Compile Include="..\Xamarin.Auth.Common.LinkSource\AccountStore\AccountStoreException.cs">
       <Link>AccountStore\AccountStoreException.cs</Link>
     </Compile>
-    <Compile Include="AccountStore\ACAccountWrapper.cs">
+    <!--<Compile Include="AccountStore\ACAccountWrapper.cs">
       <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="AccountStore\KeyChainAccountStore.cs" />
-    <Compile Include="AccountStore\KeyChainAccountStore.Aync.cs" />
-    <Folder Include="OAuth\" />
-    <Folder Include="OAuth\OAuth2\" />
+    </Compile>-->
+    <!--<Compile Include="AccountStore\KeyChainAccountStore.cs" />
+    <Compile Include="AccountStore\KeyChainAccountStore.Aync.cs" />-->
+<!--    <Folder Include="OAuth\" />
+    <Folder Include="OAuth\OAuth2\" />-->
     <Compile Include="..\Xamarin.Auth.Common.LinkSource\OAuth\OAuth2\State.cs">
       <Link>OAuth\OAuth2\State.cs</Link>
     </Compile>
@@ -190,14 +190,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="packages.config" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Properties\" />
-  </ItemGroup>
-  <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
-  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
-    <!--
-  <Import Project="..\..\packages\Microsoft.DotNet.BuildTools.GenAPI.1.0.0-beta-00081\build\Microsoft.DotNet.BuildTools.GenAPI.targets" Condition="Exists('..\..\packages\Microsoft.DotNet.BuildTools.GenAPI.1.0.0-beta-00081\build\Microsoft.DotNet.BuildTools.GenAPI.targets')" />
-    -->
 </Project>

@@ -42,10 +42,10 @@ namespace Xamarin.Utilities._MobileServices.iOS
 
             var alert = new UIAlertView
                             (
-                                mainBundle.LocalizedString(title, "Error message title"),
-                                mainBundle.LocalizedString(message, "Error"),
+                                mainBundle.GetLocalizedString(title, "Error message title"),
+                                mainBundle.GetLocalizedString(message, "Error"),
                                 null,
-                                mainBundle.LocalizedString("OK", "Dismiss button title for error message")
+                                mainBundle.GetLocalizedString("OK", "Dismiss button title for error message")
                             );
 
             if (continuation != null)

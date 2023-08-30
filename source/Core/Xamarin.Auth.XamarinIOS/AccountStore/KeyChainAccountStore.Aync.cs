@@ -66,7 +66,7 @@ namespace Xamarin.Auth._MobileServices
             var boolType =typeof(SecRecord).Assembly
                 .GetTypes()
                 .First(t => t.Name == "CFBoolean"
-                    && t.Namespace == (typeof(CFObject)).Namespace /* "[MonoTouch.]CoreFoundation" */
+                    && t.Namespace == (typeof(NSObject)).Namespace /* "[MonoTouch.]CoreFoundation" */
                 );
 
             var trueHandle = boolType.GetProperty("TrueHandle", BindingFlags.NonPublic | BindingFlags.Static);

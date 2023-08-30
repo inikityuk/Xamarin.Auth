@@ -79,7 +79,7 @@ namespace Xamarin.Auth._MobileServices
             {
                 progress = new ProgressLabel
                             (
-                                NSBundle.MainBundle.LocalizedString
+                                NSBundle.MainBundle.GetLocalizedString
                                                     (
                                                         "Verifying", 
                                                         "Verifying status message when adding accounts"
@@ -355,7 +355,7 @@ namespace Xamarin.Auth._MobileServices
                         cell.TextLabel.TextAlignment = UITextAlignment.Center;
                     }
 
-                    cell.TextLabel.Text = NSBundle.MainBundle.LocalizedString("Sign In", "Sign In button title");
+                    cell.TextLabel.Text = NSBundle.MainBundle.GetLocalizedString("Sign In", "Sign In button title");
 
                     return cell;
                 }
@@ -368,7 +368,7 @@ namespace Xamarin.Auth._MobileServices
                         cell.TextLabel.TextAlignment = UITextAlignment.Center;
                     }
 
-                    cell.TextLabel.Text = NSBundle.MainBundle.LocalizedString("Create Account", "Create Account button title");
+                    cell.TextLabel.Text = NSBundle.MainBundle.GetLocalizedString("Create Account", "Create Account button title");
 
                     return cell;
                 }
