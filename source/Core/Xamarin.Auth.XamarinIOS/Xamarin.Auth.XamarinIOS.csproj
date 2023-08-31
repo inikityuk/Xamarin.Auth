@@ -5,6 +5,8 @@
     <ImplicitUsings>true</ImplicitUsings>
     <SupportedOSPlatformVersion>13.0</SupportedOSPlatformVersion>
     <Version>99.9.9</Version>
+    <RootNamespace>Xamarin.Auth</RootNamespace>
+    <AssemblyName>Xamarin.Auth</AssemblyName>
   </PropertyGroup>
 
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">

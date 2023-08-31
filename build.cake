@@ -376,18 +376,18 @@ Task ("libs-custom")
 
 string[] source_solutions = new string[]
 {
-    "./source/Xamarin.Auth-Library.sln",
+    //"./source/Xamarin.Auth-Library.sln",
     "./source/Xamarin.Auth-Library-VS4Mac.sln",
     //"./source/Xamarin.Auth-Library-VS2015.sln",
-    "./source/Xamarin.Auth-Library-VS4W-2017.sln",
+    //"./source/Xamarin.Auth-Library-VS4W-2017.sln",
 };
 
 string[] solutions_for_nuget_tests = new string[]
 {
-    "./samples/Traditional.Standard/Providers/Xamarin.Auth.Samples.TraditionalStandard-MacOSX-Xamarin.Studio.sln",
-    "./samples/Traditional.Standard/Providers/Xamarin.Auth.Samples.TraditionalStandard.sln",
-    "./samples/Xamarin.Forms/Evolve16Labs/05-OAuth/ComicBook.sln",
-    "./samples/Xamarin.Forms/Providers/XamarinAuth.XamarinForms.sln",
+    //"./samples/Traditional.Standard/Providers/Xamarin.Auth.Samples.TraditionalStandard-MacOSX-Xamarin.Studio.sln",
+    //"./samples/Traditional.Standard/Providers/Xamarin.Auth.Samples.TraditionalStandard.sln",
+    //"./samples/Xamarin.Forms/Evolve16Labs/05-OAuth/ComicBook.sln",
+    //"./samples/Xamarin.Forms/Providers/XamarinAuth.XamarinForms.sln",
 };
 
 string[] sample_solutions_macosx = new string[]
@@ -749,7 +749,10 @@ Action<string,  MSBuildSettings> BuildLoop =
             }
 
 
-            MSBuild(sln_prj,msbuild_settings);
+            //MSBuild(sln_prj,msbuild_settings);
+
+            
+            DotNetBuild(sln_prj);
         }
 
         return;
@@ -838,29 +841,29 @@ Task ("libs-macosx-projects")
                 );
 
                 //-------------------------------------------------------------------------------------
-                solution_or_project = "./source/Core/Xamarin.Auth.Portable/Xamarin.Auth.Portable.csproj";
-                if (is_using_custom_defines == true)
-                {
-                    define = custom_defines;
-                }
-                BuildLoop
-                (
-                    solution_or_project,
-                    new MSBuildSettings
-                    {
-                    }.WithProperty("XamarinAuthCustomPreprocessorConstantsDefines", define)
-                );
+                // solution_or_project = "./source/Core/Xamarin.Auth.Portable/Xamarin.Auth.Portable.csproj";
+                // if (is_using_custom_defines == true)
+                // {
+                //     define = custom_defines;
+                // }
+                // BuildLoop
+                // (
+                //     solution_or_project,
+                //     new MSBuildSettings
+                //     {
+                //     }.WithProperty("XamarinAuthCustomPreprocessorConstantsDefines", define)
+                // );
 
-                CopyFiles
-                    (
-                        "./source/Core/Xamarin.Auth.Portable/**/Release/Xamarin.Auth.dll",
-                        "./output/pcl/"
-                    );
-                CopyFiles
-                    (
-                        "./source/Core/Xamarin.Auth.Portable/**/Release/Xamarin.Auth.pdb",
-                        "./output/pcl/"
-                    );
+                // CopyFiles
+                //     (
+                //         "./source/Core/Xamarin.Auth.Portable/**/Release/Xamarin.Auth.dll",
+                //         "./output/pcl/"
+                //     );
+                // CopyFiles
+                //     (
+                //         "./source/Core/Xamarin.Auth.Portable/**/Release/Xamarin.Auth.pdb",
+                //         "./output/pcl/"
+                //     );
                 //-------------------------------------------------------------------------------------
                 solution_or_project = "./source/Core/Xamarin.Auth.XamarinAndroid/Xamarin.Auth.XamarinAndroid.csproj";
                 if (is_using_custom_defines == true)
@@ -913,153 +916,153 @@ Task ("libs-macosx-projects")
 
 
                 //-------------------------------------------------------------------------------------
-                solution_or_project = "./source/Extensions/Xamarin.Auth.Extensions.Portable/Xamarin.Auth.Extensions.Portable.csproj";
-                if (is_using_custom_defines == true)
-                {
-                    define = custom_defines;
-                }
-                BuildLoop
-                (
-                    solution_or_project,
-                    new MSBuildSettings
-                    {
-                    }.WithProperty("XamarinAuthCustomPreprocessorConstantsDefines", define)
-                );
+                // solution_or_project = "./source/Extensions/Xamarin.Auth.Extensions.Portable/Xamarin.Auth.Extensions.Portable.csproj";
+                // if (is_using_custom_defines == true)
+                // {
+                //     define = custom_defines;
+                // }
+                // BuildLoop
+                // (
+                //     solution_or_project,
+                //     new MSBuildSettings
+                //     {
+                //     }.WithProperty("XamarinAuthCustomPreprocessorConstantsDefines", define)
+                // );
 
-                CopyFiles
-                    (
-                        "./source/Extensions/Xamarin.Auth.Extensions.Portable/**/Release/Xamarin.Auth.Extensions.dll",
-                        "./output/pcl/"
-                    );
-                CopyFiles
-                    (
-                        "./source/Extensions/Xamarin.Auth.Extensions.Portable/**/Release/Xamarin.Auth.Extensions.pdb",
-                        "./output/pcl/"
-                    );
+                // CopyFiles
+                //     (
+                //         "./source/Extensions/Xamarin.Auth.Extensions.Portable/**/Release/Xamarin.Auth.Extensions.dll",
+                //         "./output/pcl/"
+                //     );
+                // CopyFiles
+                //     (
+                //         "./source/Extensions/Xamarin.Auth.Extensions.Portable/**/Release/Xamarin.Auth.Extensions.pdb",
+                //         "./output/pcl/"
+                //     );
                 //-------------------------------------------------------------------------------------
-                solution_or_project = "./source/Extensions/Xamarin.Auth.Extensions.XamarinAndroid/Xamarin.Auth.Extensions.XamarinAndroid.csproj";
-                if (is_using_custom_defines == true)
-                {
-                    define = custom_defines;
-                }
-                BuildLoop
-                (
-                    solution_or_project,
-                    new MSBuildSettings
-                    {
-                    }.WithProperty("XamarinAuthCustomPreprocessorConstantsDefines", define)
-                );
+                // solution_or_project = "./source/Extensions/Xamarin.Auth.Extensions.XamarinAndroid/Xamarin.Auth.Extensions.XamarinAndroid.csproj";
+                // if (is_using_custom_defines == true)
+                // {
+                //     define = custom_defines;
+                // }
+                // BuildLoop
+                // (
+                //     solution_or_project,
+                //     new MSBuildSettings
+                //     {
+                //     }.WithProperty("XamarinAuthCustomPreprocessorConstantsDefines", define)
+                // );
 
-                CopyFiles
-                    (
-                        "./source/Extensions/Xamarin.Auth.Extensions.XamarinAndroid/**/Release/Xamarin.Auth.Extensions.dll",
-                        "./output/android/"
-                    );
-                CopyFiles
-                    (
-                        "./source/Extensions/Xamarin.Auth.Extensions.XamarinAndroid/**/Release/Xamarin.Auth.Extensions.pdb",
-                        "./output/android/"
-                    );
+                // CopyFiles
+                //     (
+                //         "./source/Extensions/Xamarin.Auth.Extensions.XamarinAndroid/**/Release/Xamarin.Auth.Extensions.dll",
+                //         "./output/android/"
+                //     );
+                // CopyFiles
+                //     (
+                //         "./source/Extensions/Xamarin.Auth.Extensions.XamarinAndroid/**/Release/Xamarin.Auth.Extensions.pdb",
+                //         "./output/android/"
+                //     );
                 //-------------------------------------------------------------------------------------
-                solution_or_project = "./source/Extensions/Xamarin.Auth.Extensions.XamarinIOS/Xamarin.Auth.Extensions.XamarinIOS.csproj";
-                if (is_using_custom_defines == true)
-                {
-                    define = custom_defines;
-                }
-                BuildLoop
-                (
-                    solution_or_project,
-                    new MSBuildSettings
-                    {
-                    }.WithProperty("XamarinAuthCustomPreprocessorConstantsDefines", define)
-                );
+                // solution_or_project = "./source/Extensions/Xamarin.Auth.Extensions.XamarinIOS/Xamarin.Auth.Extensions.XamarinIOS.csproj";
+                // if (is_using_custom_defines == true)
+                // {
+                //     define = custom_defines;
+                // }
+                // BuildLoop
+                // (
+                //     solution_or_project,
+                //     new MSBuildSettings
+                //     {
+                //     }.WithProperty("XamarinAuthCustomPreprocessorConstantsDefines", define)
+                // );
 
-                CopyFiles
-                    (
-                        "./source/Extensions/Xamarin.Auth.Extensions.XamarinIOS/**/Release/Xamarin.Auth.Extensions.dll",
-                        "./output/ios/"
-                    );
-                CopyFiles
-                    (
-                        "./source/Extensions/Xamarin.Auth.Extensions.XamarinIOS/**/Release/Xamarin.Auth.Extensions.pdb",
-                        "./output/ios/"
-                    );
+                // CopyFiles
+                //     (
+                //         "./source/Extensions/Xamarin.Auth.Extensions.XamarinIOS/**/Release/Xamarin.Auth.Extensions.dll",
+                //         "./output/ios/"
+                //     );
+                // CopyFiles
+                //     (
+                //         "./source/Extensions/Xamarin.Auth.Extensions.XamarinIOS/**/Release/Xamarin.Auth.Extensions.pdb",
+                //         "./output/ios/"
+                //     );
                 //-------------------------------------------------------------------------------------
 
 
 
                 //-------------------------------------------------------------------------------------
-                solution_or_project = "./source/XamarinForms/Xamarin.Auth.Forms/Xamarin.Auth.Forms.csproj";
-                if (is_using_custom_defines == true)
-                {
-                    define = custom_defines;
-                }
-                BuildLoop
-                (
-                    solution_or_project,
-                    new MSBuildSettings
-                    {
-                    }.WithProperty("XamarinAuthCustomPreprocessorConstantsDefines", define)
-                );
+                // solution_or_project = "./source/XamarinForms/Xamarin.Auth.Forms/Xamarin.Auth.Forms.csproj";
+                // if (is_using_custom_defines == true)
+                // {
+                //     define = custom_defines;
+                // }
+                // BuildLoop
+                // (
+                //     solution_or_project,
+                //     new MSBuildSettings
+                //     {
+                //     }.WithProperty("XamarinAuthCustomPreprocessorConstantsDefines", define)
+                // );
 
-                CopyFiles
-                    (
-                        "./source/XamarinForms/Xamarin.Auth.Forms/**/Release/Xamarin.Auth.XamarinForms.dll",
-                        "./output/pcl/"
-                    );
-                CopyFiles
-                    (
-                        "./source/XamarinForms/Xamarin.Auth.Forms/**/Release/Xamarin.Auth.XamarinForms.pdb",
-                        "./output/pcl/"
-                    );
+                // CopyFiles
+                //     (
+                //         "./source/XamarinForms/Xamarin.Auth.Forms/**/Release/Xamarin.Auth.XamarinForms.dll",
+                //         "./output/pcl/"
+                //     );
+                // CopyFiles
+                //     (
+                //         "./source/XamarinForms/Xamarin.Auth.Forms/**/Release/Xamarin.Auth.XamarinForms.pdb",
+                //         "./output/pcl/"
+                //     );
                 //-------------------------------------------------------------------------------------
-                solution_or_project = "./source/XamarinForms/Xamarin.Auth.Forms.Droid/Xamarin.Auth.Forms.Droid.csproj";
-                if (is_using_custom_defines == true)
-                {
-                    define = custom_defines;
-                }
-                BuildLoop
-                (
-                    solution_or_project,
-                    new MSBuildSettings
-                    {
-                    }.WithProperty("XamarinAuthCustomPreprocessorConstantsDefines", define)
-                );
+                // solution_or_project = "./source/XamarinForms/Xamarin.Auth.Forms.Droid/Xamarin.Auth.Forms.Droid.csproj";
+                // if (is_using_custom_defines == true)
+                // {
+                //     define = custom_defines;
+                // }
+                // BuildLoop
+                // (
+                //     solution_or_project,
+                //     new MSBuildSettings
+                //     {
+                //     }.WithProperty("XamarinAuthCustomPreprocessorConstantsDefines", define)
+                // );
 
-                CopyFiles
-                    (
-                        "./source/XamarinForms/Xamarin.Auth.Forms.Droid/**/Release/Xamarin.Auth.XamarinForms.dll",
-                        "./output/android/"
-                    );
-                CopyFiles
-                    (
-                        "./source/XamarinForms/Xamarin.Auth.Forms.Droid/**/Release/Xamarin.Auth.XamarinForms.pdb",
-                        "./output/android/"
-                    );
+                // CopyFiles
+                //     (
+                //         "./source/XamarinForms/Xamarin.Auth.Forms.Droid/**/Release/Xamarin.Auth.XamarinForms.dll",
+                //         "./output/android/"
+                //     );
+                // CopyFiles
+                //     (
+                //         "./source/XamarinForms/Xamarin.Auth.Forms.Droid/**/Release/Xamarin.Auth.XamarinForms.pdb",
+                //         "./output/android/"
+                //     );
                 //-------------------------------------------------------------------------------------
-                solution_or_project = "./source/XamarinForms/Xamarin.Auth.Forms.iOS/Xamarin.Auth.Forms.iOS.csproj";
-                if (is_using_custom_defines == true)
-                {
-                    define = custom_defines;
-                }
-                BuildLoop
-                (
-                    solution_or_project,
-                    new MSBuildSettings
-                    {
-                    }.WithProperty("XamarinAuthCustomPreprocessorConstantsDefines", define)
-                );
+                // solution_or_project = "./source/XamarinForms/Xamarin.Auth.Forms.iOS/Xamarin.Auth.Forms.iOS.csproj";
+                // if (is_using_custom_defines == true)
+                // {
+                //     define = custom_defines;
+                // }
+                // BuildLoop
+                // (
+                //     solution_or_project,
+                //     new MSBuildSettings
+                //     {
+                //     }.WithProperty("XamarinAuthCustomPreprocessorConstantsDefines", define)
+                // );
 
-                CopyFiles
-                    (
-                        "./source/XamarinForms/Xamarin.Auth.Forms.iOS/**/Release/Xamarin.Auth.XamarinForms.dll",
-                        "./output/ios/"
-                    );
-                CopyFiles
-                    (
-                        "./source/XamarinForms/Xamarin.Auth.Forms.iOS/**/Release/Xamarin.Auth.XamarinForms.pdb",
-                        "./output/ios/"
-                    );
+                // CopyFiles
+                //     (
+                //         "./source/XamarinForms/Xamarin.Auth.Forms.iOS/**/Release/Xamarin.Auth.XamarinForms.dll",
+                //         "./output/ios/"
+                //     );
+                // CopyFiles
+                //     (
+                //         "./source/XamarinForms/Xamarin.Auth.Forms.iOS/**/Release/Xamarin.Auth.XamarinForms.pdb",
+                //         "./output/ios/"
+                //     );
                 //-------------------------------------------------------------------------------------
             } // if ( ! IsRunningOnWindows() )
 
@@ -1687,152 +1690,152 @@ Task ("copy-artifacts")
                 );
             */
             //-------------------------------------------------------------------------------------
-            CopyFiles
-                (
-                    "./source/Core/Xamarin.Auth.NetStandard10.ReferenceAssembly/**/Release/netstandard1.0/Xamarin.Auth.dll",
-                    "./output/netstandard1.0/"
-                );
-            CopyFiles
-                (
-                    "./source/Core/Xamarin.Auth.NetStandard10.ReferenceAssembly/**/Release/netstandard1.0/Xamarin.Auth.pdb",
-                    "./output/netstandard1.0/"
-                );
+            // CopyFiles
+            //     (
+            //         "./source/Core/Xamarin.Auth.NetStandard10.ReferenceAssembly/**/Release/netstandard1.0/Xamarin.Auth.dll",
+            //         "./output/netstandard1.0/"
+            //     );
+            // CopyFiles
+            //     (
+            //         "./source/Core/Xamarin.Auth.NetStandard10.ReferenceAssembly/**/Release/netstandard1.0/Xamarin.Auth.pdb",
+            //         "./output/netstandard1.0/"
+            //     );
             //-------------------------------------------------------------------------------------
-            CopyFiles
-                (
-                    "./source/Core/Xamarin.Auth.NetStandard16/**/Release/netstandard1.6/Xamarin.Auth.dll",
-                    "./output/netstandard1.6/"
-                );
-            CopyFiles
-                (
-                    "./source/Core/Xamarin.Auth.NetStandard16/**/Release/netstandard1.6/Xamarin.Auth.pdb",
-                    "./output/netstandard1.6/"
-                );
-            //-------------------------------------------------------------------------------------
-
-            //-------------------------------------------------------------------------------------
-            CopyFiles
-                (
-                    "./source/Extensions/Xamarin.Auth.Extensions.Portable/**/Release/Xamarin.Auth.Extensions.dll",
-                    "./output/pcl/"
-                );
-            CopyFiles
-                (
-                    "./source/Extensions/Xamarin.Auth.Extensions.Portable/**/Release/Xamarin.Auth.Extensions.pdb",
-                    "./output/pcl/"
-                );
-            //-------------------------------------------------------------------------------------
-            CopyFiles
-                (
-                    "./source/Extensions/Xamarin.Auth.Extensions.XamarinAndroid/**/Release/Xamarin.Auth.Extensions.dll",
-                    "./output/android/"
-                );
-            CopyFiles
-                (
-                    "./source/Extensions/Xamarin.Auth.Extensions.XamarinAndroid/**/Release/Xamarin.Auth.Extensions.pdb",
-                    "./output/android/"
-                );
-            //-------------------------------------------------------------------------------------
-            CopyFiles
-                (
-                    "./source/Extensions/Xamarin.Auth.Extensions.XamarinIOS/**/Release/Xamarin.Auth.Extensions.dll",
-                    "./output/ios/"
-                );
-            CopyFiles
-                (
-                    "./source/Extensions/Xamarin.Auth.Extensions.XamarinIOS/**/Release/Xamarin.Auth.Extensions.pdb",
-                    "./output/ios/"
-                );
-            //-------------------------------------------------------------------------------------
-            CopyFiles
-                (
-                    "./source/Extensions/Xamarin.Auth.Extensions.NetStandard10.ReferenceAssembly/**/Release/netstandard1.0/Xamarin.Auth.Extensions.dll",
-                    "./output/netstandard1.0/"
-                );
-            CopyFiles
-                (
-                    "./source/Extensions/Xamarin.Auth.Extensions.NetStandard10.ReferenceAssembly/**/Release/netstandard1.0/Xamarin.Auth.Extensions.pdb",
-                    "./output/netstandard1.0/"
-                );
-            //-------------------------------------------------------------------------------------
-            CopyFiles
-                (
-                    "./source/Extensions/Xamarin.Auth.Extensions.NetStandard16/**/Release/netstandard1.6/Xamarin.Auth.Extensions.dll",
-                    "./output/netstandard1.6/"
-                );
-            CopyFiles
-                (
-                    "./source/Extensions/Xamarin.Auth.Extensions.NetStandard16/**/Release/netstandard1.6/Xamarin.Auth.Extensions.pdb",
-                    "./output/netstandard1.6/"
-                );
+            // CopyFiles
+            //     (
+            //         "./source/Core/Xamarin.Auth.NetStandard16/**/Release/netstandard1.6/Xamarin.Auth.dll",
+            //         "./output/netstandard1.6/"
+            //     );
+            // CopyFiles
+            //     (
+            //         "./source/Core/Xamarin.Auth.NetStandard16/**/Release/netstandard1.6/Xamarin.Auth.pdb",
+            //         "./output/netstandard1.6/"
+            //     );
             //-------------------------------------------------------------------------------------
 
             //-------------------------------------------------------------------------------------
-            CopyFiles
-                (
-                    "./source/XamarinForms/Xamarin.Auth.Forms/**/Release/Xamarin.Auth.XamarinForms.dll",
-                    "./output/pcl/"
-                );
-            CopyFiles
-                (
-                    "./source/XamarinForms/Xamarin.Auth.Forms/**/Release/Xamarin.Auth.XamarinForms.pdb",
-                    "./output/pcl/"
-                );
+            // CopyFiles
+            //     (
+            //         "./source/Extensions/Xamarin.Auth.Extensions.Portable/**/Release/Xamarin.Auth.Extensions.dll",
+            //         "./output/pcl/"
+            //     );
+            // CopyFiles
+            //     (
+            //         "./source/Extensions/Xamarin.Auth.Extensions.Portable/**/Release/Xamarin.Auth.Extensions.pdb",
+            //         "./output/pcl/"
+            //     );
             //-------------------------------------------------------------------------------------
-            CopyFiles
-                (
-                    "./source/XamarinForms/Xamarin.Auth.Forms/**/Release/Xamarin.Auth.XamarinForms.dll",
-                    "./output/pcl/"
-                );
-            CopyFiles
-                (
-                    "./source/XamarinForms/Xamarin.Auth.Forms/**/Release/Xamarin.Auth.XamarinForms.pdb",
-                    "./output/pcl/"
-                );
+            // CopyFiles
+            //     (
+            //         "./source/Extensions/Xamarin.Auth.Extensions.XamarinAndroid/**/Release/Xamarin.Auth.Extensions.dll",
+            //         "./output/android/"
+            //     );
+            // CopyFiles
+            //     (
+            //         "./source/Extensions/Xamarin.Auth.Extensions.XamarinAndroid/**/Release/Xamarin.Auth.Extensions.pdb",
+            //         "./output/android/"
+            //     );
             //-------------------------------------------------------------------------------------
-            CopyFiles
-                (
-                    "./source/XamarinForms/Xamarin.Auth.Forms.Droid/**/Release/Xamarin.Auth.XamarinForms.dll",
-                    "./output/android/"
-                );
-            CopyFiles
-                (
-                    "./source/XamarinForms/Xamarin.Auth.Forms.Droid/**/Release/Xamarin.Auth.XamarinForms.pdb",
-                    "./output/android/"
-                );
+            // CopyFiles
+            //     (
+            //         "./source/Extensions/Xamarin.Auth.Extensions.XamarinIOS/**/Release/Xamarin.Auth.Extensions.dll",
+            //         "./output/ios/"
+            //     );
+            // CopyFiles
+            //     (
+            //         "./source/Extensions/Xamarin.Auth.Extensions.XamarinIOS/**/Release/Xamarin.Auth.Extensions.pdb",
+            //         "./output/ios/"
+            //     );
             //-------------------------------------------------------------------------------------
-            CopyFiles
-                (
-                    "./source/XamarinForms/Xamarin.Auth.Forms.iOS/**/Release/Xamarin.Auth.XamarinForms.dll",
-                    "./output/ios/"
-                );
-            CopyFiles
-                (
-                    "./source/XamarinForms/Xamarin.Auth.Forms.iOS/**/Release/Xamarin.Auth.XamarinForms.pdb",
-                    "./output/ios/"
-                );
+            // CopyFiles
+            //     (
+            //         "./source/Extensions/Xamarin.Auth.Extensions.NetStandard10.ReferenceAssembly/**/Release/netstandard1.0/Xamarin.Auth.Extensions.dll",
+            //         "./output/netstandard1.0/"
+            //     );
+            // CopyFiles
+            //     (
+            //         "./source/Extensions/Xamarin.Auth.Extensions.NetStandard10.ReferenceAssembly/**/Release/netstandard1.0/Xamarin.Auth.Extensions.pdb",
+            //         "./output/netstandard1.0/"
+            //     );
             //-------------------------------------------------------------------------------------
-            CopyFiles
-                (
-                    "./source/XamarinForms/Xamarin.Auth.Forms.NetStandard10.ReferenceAssembly/**/Release/netstandard1.0/Xamarin.Auth.XamarinForms.dll",
-                    "./output/netstandard1.0/"
-                );
-            CopyFiles
-                (
-                    "./source/XamarinForms/Xamarin.Auth.Forms.NetStandard10.ReferenceAssembly/**/Release/netstandard1.0//Xamarin.Auth.XamarinForms.pdb",
-                    "./output/netstandard1.0/"
-                );
+            // CopyFiles
+            //     (
+            //         "./source/Extensions/Xamarin.Auth.Extensions.NetStandard16/**/Release/netstandard1.6/Xamarin.Auth.Extensions.dll",
+            //         "./output/netstandard1.6/"
+            //     );
+            // CopyFiles
+            //     (
+            //         "./source/Extensions/Xamarin.Auth.Extensions.NetStandard16/**/Release/netstandard1.6/Xamarin.Auth.Extensions.pdb",
+            //         "./output/netstandard1.6/"
+            //     );
             //-------------------------------------------------------------------------------------
-            CopyFiles
-                (
-                    "./source/XamarinForms/Xamarin.Auth.Forms.NetStandard16/**/Release/netstandard1.6/Xamarin.Auth.XamarinForms.dll",
-                    "./output/netstandard1.6/"
-                );
-            CopyFiles
-                (
-                    "./source/XamarinForms/Xamarin.Auth.Forms.NetStandard16/**/Release/netstandard1.6/Xamarin.Auth.XamarinForms.pdb",
-                    "./output/netstandard1.6/"
-                );
+
+            //-------------------------------------------------------------------------------------
+            // CopyFiles
+            //     (
+            //         "./source/XamarinForms/Xamarin.Auth.Forms/**/Release/Xamarin.Auth.XamarinForms.dll",
+            //         "./output/pcl/"
+            //     );
+            // CopyFiles
+            //     (
+            //         "./source/XamarinForms/Xamarin.Auth.Forms/**/Release/Xamarin.Auth.XamarinForms.pdb",
+            //         "./output/pcl/"
+            //     );
+            //-------------------------------------------------------------------------------------
+            // CopyFiles
+            //     (
+            //         "./source/XamarinForms/Xamarin.Auth.Forms/**/Release/Xamarin.Auth.XamarinForms.dll",
+            //         "./output/pcl/"
+            //     );
+            // CopyFiles
+            //     (
+            //         "./source/XamarinForms/Xamarin.Auth.Forms/**/Release/Xamarin.Auth.XamarinForms.pdb",
+            //         "./output/pcl/"
+            //     );
+            //-------------------------------------------------------------------------------------
+            // CopyFiles
+            //     (
+            //         "./source/XamarinForms/Xamarin.Auth.Forms.Droid/**/Release/Xamarin.Auth.XamarinForms.dll",
+            //         "./output/android/"
+            //     );
+            // CopyFiles
+            //     (
+            //         "./source/XamarinForms/Xamarin.Auth.Forms.Droid/**/Release/Xamarin.Auth.XamarinForms.pdb",
+            //         "./output/android/"
+            //     );
+            //-------------------------------------------------------------------------------------
+            // CopyFiles
+            //     (
+            //         "./source/XamarinForms/Xamarin.Auth.Forms.iOS/**/Release/Xamarin.Auth.XamarinForms.dll",
+            //         "./output/ios/"
+            //     );
+            // CopyFiles
+            //     (
+            //         "./source/XamarinForms/Xamarin.Auth.Forms.iOS/**/Release/Xamarin.Auth.XamarinForms.pdb",
+            //         "./output/ios/"
+            //     );
+            //-------------------------------------------------------------------------------------
+            // CopyFiles
+            //     (
+            //         "./source/XamarinForms/Xamarin.Auth.Forms.NetStandard10.ReferenceAssembly/**/Release/netstandard1.0/Xamarin.Auth.XamarinForms.dll",
+            //         "./output/netstandard1.0/"
+            //     );
+            // CopyFiles
+            //     (
+            //         "./source/XamarinForms/Xamarin.Auth.Forms.NetStandard10.ReferenceAssembly/**/Release/netstandard1.0//Xamarin.Auth.XamarinForms.pdb",
+            //         "./output/netstandard1.0/"
+            //     );
+            //-------------------------------------------------------------------------------------
+            // CopyFiles
+            //     (
+            //         "./source/XamarinForms/Xamarin.Auth.Forms.NetStandard16/**/Release/netstandard1.6/Xamarin.Auth.XamarinForms.dll",
+            //         "./output/netstandard1.6/"
+            //     );
+            // CopyFiles
+            //     (
+            //         "./source/XamarinForms/Xamarin.Auth.Forms.NetStandard16/**/Release/netstandard1.6/Xamarin.Auth.XamarinForms.pdb",
+            //         "./output/netstandard1.6/"
+            //     );
             //-------------------------------------------------------------------------------------
 
             return;
@@ -1992,30 +1995,30 @@ Task ("nuget")
                         RequireLicenseAcceptance = true
                     }
                 );
-            NuGetPack
-                (
-                    "./nuget/Xamarin.Auth.XamarinForms.nuspec",
-                    new NuGetPackSettings
-                    {
-                        Verbosity = NuGetVerbosity.Detailed,
-                        OutputDirectory = "./output/",
-                        Symbols = true,
-                        ToolPath = nuget_4,
-                        RequireLicenseAcceptance = true
-                    }
-                );
-            NuGetPack
-                (
-                    "./nuget/Xamarin.Auth.Extensions.nuspec",
-                    new NuGetPackSettings
-                    {
-                        Verbosity = NuGetVerbosity.Detailed,
-                        OutputDirectory = "./output/",
-                        Symbols = true,
-                        ToolPath = nuget_4,
-                        RequireLicenseAcceptance = true
-                    }
-                );
+            // NuGetPack
+            //     (
+            //         "./nuget/Xamarin.Auth.XamarinForms.nuspec",
+            //         new NuGetPackSettings
+            //         {
+            //             Verbosity = NuGetVerbosity.Detailed,
+            //             OutputDirectory = "./output/",
+            //             Symbols = true,
+            //             ToolPath = nuget_4,
+            //             RequireLicenseAcceptance = true
+            //         }
+            //     );
+            // NuGetPack
+            //     (
+            //         "./nuget/Xamarin.Auth.Extensions.nuspec",
+            //         new NuGetPackSettings
+            //         {
+            //             Verbosity = NuGetVerbosity.Detailed,
+            //             OutputDirectory = "./output/",
+            //             Symbols = true,
+            //             ToolPath = nuget_4,
+            //             RequireLicenseAcceptance = true
+            //         }
+            //     );
         }
     );
 
