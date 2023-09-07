@@ -166,11 +166,11 @@
     <Folder Include="AccountStore\" />
   </ItemGroup>-->
   <ItemGroup>
-    <PackageReference Include="runtime.unix.System.Runtime.Extensions" Version="4.3.0" />
+<!--    <PackageReference Include="runtime.unix.System.Runtime.Extensions" Version="4.3.0" />
     <PackageReference Include="runtime.win.System.Runtime.Extensions" Version="4.3.0" />
     <PackageReference Include="System.Net.Requests" Version="4.3.0" />
     <PackageReference Include="System.Runtime" Version="4.3.0" />
-    <PackageReference Include="System.Runtime.Extensions" Version="4.3.0" />
+    <PackageReference Include="System.Runtime.Extensions" Version="4.3.0" />-->
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
   </ItemGroup>
 </Project>

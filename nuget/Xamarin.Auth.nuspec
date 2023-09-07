@@ -95,9 +95,15 @@
             <group targetFramework="MonoAndroid13.0">
                 <dependency id="Xamarin.AndroidX.Browser" version="1.5.0.3" include="All" />
             </group> -->
-            <group targetFramework="net7.0">            
+            <group targetFramework="net7.0">
+                <dependency id="Newtonsoft.Json" version="13.0.3" include="All" />            
             </group>
-            <group targetFramework="net7.0-ios16.1">            
+            <group targetFramework="net7.0-ios16.1">
+                <dependency id="Newtonsoft.Json" version="13.0.3" include="All" />            
+            </group>
+            <group targetFramework="net7.0-android33.0">
+                <dependency id="Xamarin.AndroidX.Browser" version="1.5.0.3" include="All" />
+                <dependency id="Newtonsoft.Json" version="13.0.3" include="All" />
             </group>
         </dependencies>
     </metadata>
@@ -144,16 +150,21 @@
         <!--
             Xamarin.Android
         -->
-        <!-- <file
-            src="..\source\Core\Xamarin.Auth.XamarinAndroid\bin\Release\Xamarin.Auth.dll"
-            target="lib/MonoAndroid10/Xamarin.Auth.dll"
+        <file
+            src="..\source\Core\Xamarin.Auth.XamarinAndroid\bin\Release\net7.0-android\Xamarin.Auth.dll"
+            target="lib/net7.0-android33.0/Xamarin.Auth.dll"
             >
         </file>
         <file
-            src="..\source\Core\Xamarin.Auth.XamarinAndroid\bin\Release\Xamarin.Auth.pdb"
-            target="lib/MonoAndroid10/Xamarin.Auth.pdb"
+            src="..\source\Core\Xamarin.Auth.XamarinAndroid\bin\Release\net7.0-android\Xamarin.Auth.pdb"
+            target="lib/net7.0-android33.0/Xamarin.Auth.pdb"
             >
-        </file> -->
+        </file>
+        <file
+            src="..\source\Core\Xamarin.Auth.XamarinAndroid\bin\Release\net7.0-android\Xamarin.Auth.aar"
+            target="lib/net7.0-android33.0/Xamarin.Auth.aar"
+            >
+        </file>
 
         <!--
             Xamarin.iOS
