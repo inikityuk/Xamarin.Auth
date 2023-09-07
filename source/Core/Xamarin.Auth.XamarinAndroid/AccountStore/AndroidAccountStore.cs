@@ -93,7 +93,7 @@ namespace Xamarin.Auth._MobileServices
                     }
                 }
             }
-            catch (FileNotFoundException)
+            catch (Java.IO.FileNotFoundException)
             {
                 LoadEmptyKeyStore(Password);
             }
@@ -213,7 +213,7 @@ namespace Xamarin.Auth._MobileServices
 
         public bool FileExists(Context context, String filename)
         {
-            File file = context.GetFileStreamPath(filename);
+            Java.IO.File file = context.GetFileStreamPath(filename);
             if (file == null || !file.Exists())
             {
                 return false;

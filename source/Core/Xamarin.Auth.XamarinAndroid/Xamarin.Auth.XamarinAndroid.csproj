@@ -1,26 +1,14 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="..\..\..\..\vald.handhelddyno.xamarin\packages\Xamarin.AndroidX.Migration.1.0.10\build\monoandroid120\Xamarin.AndroidX.Migration.props" Condition="Exists('..\..\..\..\vald.handhelddyno.xamarin\packages\Xamarin.AndroidX.Migration.1.0.10\build\monoandroid120\Xamarin.AndroidX.Migration.props')" />
-  <Import Project="..\..\packages\Xamarin.Build.Download.0.11.4\build\Xamarin.Build.Download.props" Condition="Exists('..\..\packages\Xamarin.Build.Download.0.11.4\build\Xamarin.Build.Download.props')" />
+﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{47EC107C-EBB2-4676-82DB-F77B7BFC17AC}</ProjectGuid>
-    <ProjectTypeGuids>{EFBA0AD7-5A72-4C68-AF49-83D382785DCF};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
-    <OutputType>Library</OutputType>
+    <TargetFramework>net7.0-android</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>true</ImplicitUsings>
+    <SupportedOSPlatformVersion>23.0</SupportedOSPlatformVersion>
+    <Version>99.9.9</Version>
     <RootNamespace>Xamarin.Auth</RootNamespace>
     <AssemblyName>Xamarin.Auth</AssemblyName>
-    <TargetFrameworkVersion>v13.0</TargetFrameworkVersion>
-    <AndroidResgenFile>Resources\Resource.designer.cs</AndroidResgenFile>
-    <AndroidResgenClass>Resource</AndroidResgenClass>
-    <MonoAndroidResourcePrefix>Resources</MonoAndroidResourcePrefix>
-    <MonoAndroidAssetsPrefix>Assets</MonoAndroidAssetsPrefix>
-    <NuGetPackageImportStamp>
-    </NuGetPackageImportStamp>
-    <XamarinAuthCustomPreprocessorConstantsDefines>
-    </XamarinAuthCustomPreprocessorConstantsDefines>
-    <BuildWithMSBuildOnMono>true</BuildWithMSBuildOnMono>
   </PropertyGroup>
+
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
@@ -42,7 +30,7 @@
     <AndroidUseSharedRuntime>false</AndroidUseSharedRuntime>
     <DefineConstants>$(XamarinAuthCustomPreprocessorConstantsDefines)</DefineConstants>
   </PropertyGroup>
-  <ItemGroup>
+  <!--<ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
@@ -151,7 +139,7 @@
     <Reference Include="Xamarin.KotlinX.Coroutines.Android">
       <HintPath>..\..\packages\Xamarin.KotlinX.Coroutines.Android.1.7.3\lib\monoandroid12.0\Xamarin.KotlinX.Coroutines.Android.dll</HintPath>
     </Reference>
-  </ItemGroup>
+  </ItemGroup>-->
   <ItemGroup>
     <Compile Include="..\Xamarin.Auth.Common.LinkSource\System.Json\JavaScriptReader.cs">
       <Link>System.Json\JavaScriptReader.cs</Link>
@@ -170,9 +158,6 @@
     </Compile>
     <Compile Include="..\Xamarin.Auth.Common.LinkSource\System.Json\JsonValue.cs">
       <Link>System.Json\JsonValue.cs</Link>
-    </Compile>
-    <Compile Include="..\Xamarin.Auth.Common.LinkSource\AssemblyInfo.cs">
-      <Link>AssemblyInfo.cs</Link>
     </Compile>
     <Compile Include="..\Xamarin.Auth.Common.LinkSource\Authenticator.cs">
       <Link>Authenticator.cs</Link>
@@ -237,7 +222,7 @@
     <Compile Include="..\Xamarin.Auth.Common.LinkSource\Plugins\IRunInvoker.cs">
       <Link>Plugins\IRunInvoker.cs</Link>
     </Compile>
-    <Compile Include="Plugins\UIThreadRunInvoker.XamarinAndroid.cs" />
+    <!--<Compile Include="Plugins\UIThreadRunInvoker.XamarinAndroid.cs" />-->
     <Compile Include="..\Xamarin.Auth.Common.LinkSource\UINativeNonIntegratedBrowsers\WebAuthenticator.NativeUI.cs">
       <Link>UINativeNonIntegratedBrowsers\WebAuthenticator.NativeUI.cs</Link>
     </Compile>
@@ -247,7 +232,7 @@
     <Compile Include="..\Xamarin.Auth.Common.LinkSource\UINativeNonIntegratedBrowsers\AuthenticationUIType.cs">
       <Link>UINativeNonIntegratedBrowsers\AuthenticationUIType.cs</Link>
     </Compile>
-    <Compile Include="Authenticator.XamarinAndroid.cs" />
+    <!--<Compile Include="Authenticator.XamarinAndroid.cs" />
     <Compile Include="Evolve16.Labs\AuthenticationConfiguration.XamarinAndroid.cs" />
     <Compile Include="FormAuthenticator.XamarinAndroid.cs" />
     <Compile Include="PlatformSpecific\ActivityEx.cs" />
@@ -271,7 +256,7 @@
     <Compile Include="PlatformSpecific\WebAuthenticatorActivity.WebClient.cs" />
     <Compile Include="UINativeNonIntegratedBrowsers\CustomTabsUtilities\CustomTabsActionsBroadcastReceiver.cs" />
     <Compile Include="Evolve16.Labs\OAuthLoginPresenter.XamarinAndroid.cs" />
-    <Compile Include="PlatformSpecific\WebViewConfiguration.cs" />
+    <Compile Include="PlatformSpecific\WebViewConfiguration.cs" />-->
     <Compile Include="..\Xamarin.Auth.Common.LinkSource\AccountStore\Account.cs">
       <Link>AccountStore\Account.cs</Link>
     </Compile>
@@ -284,14 +269,14 @@
     <Compile Include="..\Xamarin.Auth.Common.LinkSource\AccountStore\AccountStore.Async.cs">
       <Link>AccountStore\AccountStore.Async.cs</Link>
     </Compile>
-    <Compile Include="AccountStore\AccountStore.XamarinAndroid.cs" />
+    <!--<Compile Include="AccountStore\AccountStore.XamarinAndroid.cs" />-->
     <Compile Include="..\Xamarin.Auth.Common.LinkSource\AccountStore\AccountStoreException.cs">
       <Link>AccountStore\AccountStoreException.cs</Link>
     </Compile>
-    <Compile Include="AccountStore\AndroidAccountStore.cs" />
+    <!--<Compile Include="AccountStore\AndroidAccountStore.cs" />
     <Compile Include="AccountStore\AndroidAccountStore.Async.cs">
       <DependentUpon>AndroidAccountStore.cs</DependentUpon>
-    </Compile>
+    </Compile>-->
     <Compile Include="..\Xamarin.Auth.Common.LinkSource\OAuth\OAuth2\State.cs">
       <Link>OAuth\OAuth2\State.cs</Link>
     </Compile>
@@ -302,7 +287,7 @@
       <Link>OAuth\OAuth2\ResponseType.cs</Link>
     </Compile>
   </ItemGroup>
-  <ItemGroup>
+  <!--<ItemGroup>
     <None Include="packages.config">
       <SubType>Designer</SubType>
     </None>
@@ -311,8 +296,8 @@
   <ItemGroup>
     <Folder Include="Evolve16.Labs\Security\" />
     <Folder Include="Properties\" />
-  </ItemGroup>
-  <ItemGroup>
+  </ItemGroup>-->
+  <!--<ItemGroup>
     <AndroidResource Include="Resources\layout\activity_webview.xml" />
     <AndroidResource Include="Resources\values\strings.xml" />
     <AndroidResource Include="Resources\drawable\ic_arrow_back.png" />
@@ -326,8 +311,8 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
-  </ItemGroup>
-  <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
+  </ItemGroup>-->
+  <!--<Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
   <Import Project="..\..\packages\Xamarin.Build.Download.0.11.4\build\Xamarin.Build.Download.targets" Condition="Exists('..\..\packages\Xamarin.Build.Download.0.11.4\build\Xamarin.Build.Download.targets')" />
   <Import Project="..\..\packages\Xamarin.AndroidX.Annotation.Experimental.1.1.0.3\build\monoandroid90\Xamarin.AndroidX.Annotation.Experimental.targets" Condition="Exists('..\..\packages\Xamarin.AndroidX.Annotation.Experimental.1.1.0.3\build\monoandroid90\Xamarin.AndroidX.Annotation.Experimental.targets')" />
@@ -372,5 +357,9 @@
   <Import Project="..\..\..\..\vald.handhelddyno.xamarin\packages\Xamarin.AndroidX.Browser.1.5.0.3\build\monoandroid12.0\Xamarin.AndroidX.Browser.targets" Condition="Exists('..\..\..\..\vald.handhelddyno.xamarin\packages\Xamarin.AndroidX.Browser.1.5.0.3\build\monoandroid12.0\Xamarin.AndroidX.Browser.targets')" />
   <Import Project="..\..\..\..\vald.handhelddyno.xamarin\packages\Xamarin.AndroidX.MultiDex.2.0.1.19\build\monoandroid12.0\Xamarin.AndroidX.MultiDex.targets" Condition="Exists('..\..\..\..\vald.handhelddyno.xamarin\packages\Xamarin.AndroidX.MultiDex.2.0.1.19\build\monoandroid12.0\Xamarin.AndroidX.MultiDex.targets')" />
   <Import Project="..\..\packages\Xamarin.KotlinX.Coroutines.Core.Jvm.1.7.3\build\monoandroid12.0\Xamarin.KotlinX.Coroutines.Core.Jvm.targets" Condition="Exists('..\..\packages\Xamarin.KotlinX.Coroutines.Core.Jvm.1.7.3\build\monoandroid12.0\Xamarin.KotlinX.Coroutines.Core.Jvm.targets')" />
-  <Import Project="..\..\packages\Xamarin.KotlinX.Coroutines.Android.1.7.3\build\monoandroid12.0\Xamarin.KotlinX.Coroutines.Android.targets" Condition="Exists('..\..\packages\Xamarin.KotlinX.Coroutines.Android.1.7.3\build\monoandroid12.0\Xamarin.KotlinX.Coroutines.Android.targets')" />
+  <Import Project="..\..\packages\Xamarin.KotlinX.Coroutines.Android.1.7.3\build\monoandroid12.0\Xamarin.KotlinX.Coroutines.Android.targets" Condition="Exists('..\..\packages\Xamarin.KotlinX.Coroutines.Android.1.7.3\build\monoandroid12.0\Xamarin.KotlinX.Coroutines.Android.targets')" />-->
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+    <PackageReference Include="Xamarin.AndroidX.Browser" Version="1.5.0.3" />
+  </ItemGroup>
 </Project>

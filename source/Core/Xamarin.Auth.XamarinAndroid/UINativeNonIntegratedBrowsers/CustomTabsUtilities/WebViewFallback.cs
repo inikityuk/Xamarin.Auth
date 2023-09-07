@@ -32,7 +32,7 @@ namespace AndroidX.Browser.CustomTabs.Chromium.SharedUtilities._MobileServices
     public partial class WebViewFallback : ICustomTabFallback
     #endif
     {
-        public void OpenUri(Activity activity, Uri uri)
+        public void OpenUri(Activity activity, Android.Net.Uri uri)
         {
             //OpenUriSimple(activity, uri);
             OpenUriXamarinAuthWebViewActivity(activity, uri);
@@ -40,7 +40,7 @@ namespace AndroidX.Browser.CustomTabs.Chromium.SharedUtilities._MobileServices
             return;
         }
 
-        protected void OpenUriSimple(Activity activity, Uri uri)
+        protected void OpenUriSimple(Activity activity, Android.Net.Uri uri)
         {
             Intent intent = new Intent(Intent.ActionView);
             intent.SetData(uri);
@@ -50,7 +50,7 @@ namespace AndroidX.Browser.CustomTabs.Chromium.SharedUtilities._MobileServices
         }
 
 
-        protected void OpenUriXamarinAuthWebViewActivity(Activity activity, Uri uri)
+        protected void OpenUriXamarinAuthWebViewActivity(Activity activity, Android.Net.Uri uri)
         {
             Intent intent = new Intent(activity, typeof(Xamarin.Auth.WebViewActivity));
             intent.PutExtra(Xamarin.Auth.WebViewActivity.EXTRA_URL, uri.ToString());
